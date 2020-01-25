@@ -3,6 +3,8 @@ import { PdfGenerator } from "./services";
 
 var router = express.Router();
 
+router.use("/demos", require("./routes/demos"));
+
 router.get("/", (request, response, next) => {
   PdfGenerator.instance
     .generatePdf({ url: "https://www.example.com", data: null })

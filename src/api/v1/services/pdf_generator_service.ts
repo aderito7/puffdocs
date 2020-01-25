@@ -23,9 +23,12 @@ export class PdfGenerator {
     try {
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
-      await page.goto("");
 
-      const buffer = await page.pdf({ format: "A4" });
+      await page.goto(options.url, { waitUntil: "networkidle2" });
+
+      const buffer = await page.pdf({
+        format: "A4"
+      });
 
       await browser.close();
 

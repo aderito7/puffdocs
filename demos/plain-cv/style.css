@@ -1,0 +1,108 @@
+/*
+#20bf55 - malachite
+#0b4f6c - dark imperial blue
+#01baef - cyan (process)
+#fbfbff - ghost white
+#757575 - sonice silver
+*/
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+}
+hr {
+  height: 2px;
+  background-color: #0b4f6c;
+  border: none;
+}
+
+body {
+  margin: 16px;
+}
+body > .title {
+  display: flex;
+  padding: 16px;
+  font-size: 24px;
+  background-color: #01baef;
+  color: #fbfbff;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #01baef;
+}
+
+.container {
+  padding: 16px;
+}
+
+.user-name {
+  font-size: 36px;
+  color: #0b4f6c;
+}
+
+.leading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-contact {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.work-experience > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-experience .job-title,
+.skills .title,
+.education .qualification {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.work-experience .period {
+  color: #757575;
+  font-size: 14px;
+}
+
+.skills > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills .level[level="1"]:after {
+  content: "⭐️";
+}
+
+.skills .level[level="2"]:after {
+  content: "⭐️⭐️";
+}
+
+.skills .level[level="3"]:after {
+  content: "⭐️⭐️⭐️";
+}
+
+.skills .level[level="4"]:after {
+  content: "⭐️⭐️⭐️⭐️";
+}
+
+.skills .level[level="5"]:after {
+  content: "⭐️⭐️⭐️⭐️⭐️";
+}
+
+.education > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  font-size: 40px;
+}
