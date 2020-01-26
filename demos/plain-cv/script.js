@@ -159,7 +159,6 @@
    * @param {example} data
    */
   function createDocument(data) {
-    // setValue(dom.title, "Plain CV Template by PuffDocs©");
     setValue(dom.userName, data.user.fullNames);
     setValue(dom.jobTitle, data.user.jobTitle);
 
@@ -178,7 +177,6 @@
     data.skills.forEach(skill => {
       dom.skills.appendChild(getSkill(skill));
     });
-    // dom.skills.appendChild(getSkill(data.skills[0]));
   }
 
   function getAndSetData(guid) {
