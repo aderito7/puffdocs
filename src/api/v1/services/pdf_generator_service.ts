@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer, { Browser } from "puppeteer";
 import { GeneratePdfOptions } from "../interfaces/";
 
 export class PdfGenerator {
@@ -7,7 +7,7 @@ export class PdfGenerator {
   generatePdf<T>(options: GeneratePdfOptions<T>): Promise<string> {
     const promise: Promise<string> = new Promise(
       async (
-        resolve: (value?: string | PromiseLike<string> | undefined) => void,
+        resolve: (value: string) => void,
         reject: (reason?: any) => void
       ) => {
         const pdfString: string = await this.getPdf(options);
@@ -24,10 +24,14 @@ export class PdfGenerator {
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
 
-      await page.goto(options.url, { waitUntil: "networkidle2" });
+      await page.goto(options.url, {
+        waitUntil: ["networkidle2", "domcontentloaded", "load"],
+      });
 
       const buffer = await page.pdf({
-        format: "A4"
+        format: "a4",
+        /** @todo - need to save this first */
+        // path: "./demo1.pdf",
       });
 
       await browser.close();

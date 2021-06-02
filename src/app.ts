@@ -1,10 +1,10 @@
 import express from "express";
-import bodyParser from "body-parser";
+import { urlencoded, json } from "body-parser";
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(urlencoded({ extended: false }));
+app.use(json());
 
 const router = express.Router();
 router.use("/v1.0", require("./api/v1/api"));

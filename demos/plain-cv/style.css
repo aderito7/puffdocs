@@ -20,7 +20,7 @@ hr {
 }
 
 body {
-  margin: 16px;
+  margin: 32px;
 }
 body > .title {
   display: flex;
@@ -28,7 +28,6 @@ body > .title {
   font-size: 24px;
   background-color: #01baef;
   color: #fbfbff;
-  margin-bottom: 8px;
 }
 
 .section-title {

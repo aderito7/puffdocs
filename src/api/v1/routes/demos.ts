@@ -1,6 +1,5 @@
 import express from "express";
 import { PdfGenerator } from "../services";
-import { GeneratePdfOptions } from "../interfaces";
 const router = express.Router();
 
 const baseUrl = "http://localhost:3000";
@@ -12,7 +11,7 @@ router.get("/:template", (request, response, next) => {
   const url = `${baseUrl}/${template}`;
   PdfGenerator.instance
     .generatePdf({ url, data: null })
-    .then(result => {
+    .then((result) => {
       response.status(200).send(result);
     })
     .catch(() => {
@@ -28,7 +27,7 @@ router.post("/:template", (request, response, next) => {
   data[id] = request.body;
   PdfGenerator.instance
     .generatePdf({ url, data: null })
-    .then(result => {
+    .then((result) => {
       response.status(200).send(result);
     })
     .catch(() => {
